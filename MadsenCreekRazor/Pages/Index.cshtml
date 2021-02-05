@@ -1,0 +1,28 @@
+﻿@page
+@model MadsenCreekRazor.Pages.Beers.IndexModel
+@{
+  ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+  <h1 class="display-4">Madsen Creek Brewing</h1>
+</div>
+
+
+<div class="row">
+  @foreach (var beer in Model.Beer)
+  {
+  <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">@beer.name</h5>
+        <h6 class="card-subtitle mb-2 text-muted">@beer.style</h6>
+        <p class="card-text">@beer.description</p>
+        <a href="@beer.untappedLink" class="card-link">Untapped</a>
+        <a href="@beer.recipeLink" class="card-link">Recipe</a>
+      </div>
+    </div>
+    </div>
+    }
+  </div>
+

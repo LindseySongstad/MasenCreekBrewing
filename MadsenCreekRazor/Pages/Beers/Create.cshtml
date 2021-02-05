@@ -1,0 +1,54 @@
+﻿@page
+@model MadsenCreekRazor.Pages.Beers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Beer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Beer.name" class="control-label"></label>
+                <input asp-for="Beer.name" class="form-control" />
+                <span asp-validation-for="Beer.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beer.style" class="control-label"></label>
+                <input asp-for="Beer.style" class="form-control" />
+                <span asp-validation-for="Beer.style" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beer.description" class="control-label"></label>
+                <input asp-for="Beer.description" class="form-control" />
+                <span asp-validation-for="Beer.description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beer.untappedLink" class="control-label"></label>
+                <input asp-for="Beer.untappedLink" class="form-control" />
+                <span asp-validation-for="Beer.untappedLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beer.recipeLink" class="control-label"></label>
+                <input asp-for="Beer.recipeLink" class="form-control" />
+                <span asp-validation-for="Beer.recipeLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
