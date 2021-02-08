@@ -18,8 +18,15 @@
         <h5 class="card-title">@beer.name</h5>
         <h6 class="card-subtitle mb-2 text-muted">@beer.style</h6>
         <p class="card-text">@beer.description</p>
-        <a href="@beer.untappedLink" class="card-link">Untapped</a>
-        <a href="@beer.recipeLink" class="card-link">Recipe</a>
+        @if (!String.IsNullOrEmpty(beer.untappedLink))
+        {
+          <a href="@beer.untappedLink" class="card-link">Untapped</a>
+        }
+        @if (!String.IsNullOrEmpty(beer.recipeLink))
+        {
+          <a href="@beer.recipeLink" class="card-link">Recipe</a>
+        }
+        
       </div>
     </div>
     </div>

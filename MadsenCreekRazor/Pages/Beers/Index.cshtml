@@ -44,10 +44,16 @@
                 @Html.DisplayFor(modelItem => item.description)
             </td>
             <td>
-              <a href="@item.untappedLink">Untapped</a>
+              @if (!String.IsNullOrEmpty(item.untappedLink))
+              {
+                <a href="@item.untappedLink" class="card-link">Untapped</a>
+              }
             </td>
             <td>
-              <a href="@item.recipeLink"class="card-link">Recipe</a>
+              @if (!String.IsNullOrEmpty(item.recipeLink))
+              {
+                <a href="@item.recipeLink" class="card-link">Recipe</a>
+              }
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
